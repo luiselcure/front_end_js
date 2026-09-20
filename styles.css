@@ -4,3 +4,11 @@ html{
     font-family: "Roboto", sans-serif;
     font-style: italic;
 }
+
+nav {
+background-color: aliceblue;
+width: 50vw;
+}
+#hero{
+    background-color: aqua;
+}
