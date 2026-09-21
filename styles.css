@@ -9,6 +9,9 @@ nav {
 background-color: aliceblue;
 width: 50vw;
 }
+.container{
+    display: flex;
+}
 #hero{
     background-color: aqua;
 }
