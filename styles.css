@@ -1,17 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Configuraciones generales */
 html{
-    font-family: "Roboto", sans-serif;
-    font-style: italic;
+    font-family: "Roboto", sans-serif;  
+}
+body{
+    background: #edebd2;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column-reverse;
+  
+}
+main {
+  flex: 1; 
+}
+button{
+    width: 40%;
+    border-radius: 5px;
+    border: hidden;
+    background-color: rgb(121, 146, 168);
+}
+/* Opciones para la barra de navegación */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgb(46, 60, 72);
+    
 }
 
-nav {
-background-color: aliceblue;
-width: 50vw;
-}
 .container{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100vw;
+    height: 5vh;
+    padding: 20px;
 }
-#hero{
-    background-color: aqua;
+
+.logo{
+    display: flex;
+    justify-content: center;
+    width: 33vw;
+}
+.logoImg{
+    width: 10rem;
+}
+
+/* Estilos de sección Hero */
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/* Estilos de sección categorías */
+.categories{
+    display: flex;
+    justify-content: center;
+}
+/* Estilos de sección de productos destacados */
+.featured-products{/* Para el section  */
+    display: flex;
+    justify-content: center;
+}
+.fpr{ /* Para cada div individual */
+    background-color: rgb(46, 60, 72);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5vw;
+    width: 20vw;
+    height: 10vw;
+    border: 2px solid;
+}
+.fpr_img{
+    height:50% ;
+    margin-bottom: 10%;
+}
+.addCart-btn{
+    width: 40%;
+    border-radius: 5px;
+    background-color: rgb(121, 146, 168);
+}
+/* footer */
+footer{
+    width: 100vw;
+    background-color: rgb(46, 60, 72);
+    position: absolute;
 }
