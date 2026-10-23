@@ -17,7 +17,7 @@
                 <li class="logo"><img class="logoImg" src="/img/logotype_riseWave.png" alt="logo"></li>
                 <li class="search"><input type="text" id="navSearch" name="navSearchBar" placeholder="¿Qué estás buscando hoy?" size="50"></li>
                 <li class="Signin"> <a href="#"> Sing in </a> </li>
-                <li class="car"> <a href="#"><img src="/img/buy_cart.png" alt="cart"></a></li>
+                <li class="car"> <a href="buy-cart.html"><img src="/img/buy_cart.png" alt="cart"></a></li>
             </ul>
             
             <ul class="container"  id="main-btns">
@@ -27,16 +27,78 @@
             </ul>
         </nav>    
         </header>
-        
+        <section class="contact-section">
+            <div class="contact-container">
+                <h2>Ponte en contacto con nosotros</h2>
+                <p>¿Tienes dudas sobre un producto o necesitas asesoramiento para armar tu setup? Envíanos tu consulta.</p>
+
+                <form action="https://formsubmit.co/risewavetech@gmail.com" method="POST" class="contact-form">
+                    <!-- Configuración interna de correo -->
+                    <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - RiseWave Store">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre y apellido" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="Email" placeholder="tuemail@ejemplo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono (opcional)</label>
+                        <input type="tel" id="telefono" name="Telefono" placeholder="+54 11 1234-5678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asunto">Motivo de consulta</label>
+                        <select id="asunto" name="Asunto" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Consulta General">Consulta General</option>
+                            <option value="Armado de Setup / Asesoramiento">Armado de Setup / Asesoramiento</option>
+                            <option value="Soporte Técnico">Soporte Técnico</option>
+                            <option value="Garantías y Devoluciones">Garantías y Devoluciones</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="Mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="politicas" name="Acepta_Politicas" required>
+                        <label for="politicas">Acepto los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a>.</label>
+                    </div>
+
+                    <button type="submit" class="contact-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
 </main>
-    <footer>
-        <div class="footer_section1"> <ul">
-        <li class="footer-links">Elemento</li>
-        <li class="footer-links">Elemento</li>
-        <li class="footer-links">Elemento</li>
-        <li class="footer-links">Elemento</li></ul></div>
-        <div class="footer_section2"> </div>
-        <div class="footer_section3"> </div>
+   <footer>
+        <div class="footer_section1">
+            <ul>
+                <li class="footer-links"><a href="index.html">Inicio</a></li>
+                <li class="footer-links"><a href="catalog.html">Catálogo</a></li>
+                <li class="footer-links"><a href="contact.html">Contacto</a></li>
+                <li class="footer-links"><a href="#">Términos y Condiciones</a></li>
+                <li class="footer-links"><a href="#">Políticas de Privacidad</a></li>
+            </ul>
+        </div>
+        <div class="footer_section2">
+            <ul>
+                <li class="footer-links"><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                <li class="footer-links"><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li class="footer-links"><a href="mailto:risewavetech@gmail.com">contacto@risewave.com</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer_section3">
+            <p>&copy; 2026 RiseWave Store. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 

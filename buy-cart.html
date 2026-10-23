@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>RiseWave Store</title>
+</head>
+
+<body>
+    <main>
+        <header>
+        <nav class="container">
+            
+            <ul class="container">
+                <li class="logo"><img class="logoImg" src="/img/logotype_riseWave.png" alt="logo"></li>
+                <li class="search"><input type="text" id="navSearch" name="navSearchBar" placeholder="¿Qué estás buscando hoy?" size="50"></li>
+                <li class="Signin"> <a href="#"> Sing in </a> </li>
+                <li class="car"> <a href="buy-cart.html"><img src="/img/buy_cart.png" alt="cart"></a></li>
+            </ul>
+            
+            <ul class="container"  id="main-btns">
+                <li class="nav-btn"><a href="index.html">Inicio</a></li>
+                <li class="nav-btn"><a href="catalog.html">Catálogo</a></li>
+                <li class="nav-btn"><a href="contact.html">Contácto</a></li>
+            </ul>
+        </nav>    
+        </header>
+        <section class="cart-section">
+            <div class="cart-container">
+                <h1 class="cart-title">Tu Carrito de Compras (<span id="cart-total-count">2</span>)</h1>
+
+                <div class="cart-layout">
+                    <!-- Columna Izquierda: Lista de Productos -->
+                    <div class="cart-items-wrapper">
+                        
+                        <!-- Estado Carrito Vacío (Visibilidad controlada por JS) -->
+                        <div id="empty-cart-msg" class="empty-cart-box" style="display: none;">
+                            <p>Tu carrito está actualmente vacío.</p>
+                            <a href="catalog.html" class="addCart-btn">Explorar Catálogo</a>
+                        </div>
+
+                        <!-- Contenedor Dinámico de Productos -->
+                        <div id="cart-items-list" class="cart-items-list">
+
+                            <!-- Producto 1 de Ejemplo -->
+                            <article class="cart-item" data-id="prod-001" data-price="120000">
+                                <div class="cart-item-img">
+                                    <img src="/img/fp1.jpg" alt="Auriculares Inalámbricos Over-Ear">
+                                </div>
+                                <div class="cart-item-details">
+                                    <h3 class="cart-item-title">Auriculares Inalámbricos Over-Ear</h3>
+                                    <p class="cart-item-category">Accesorios y Periféricos</p>
+                                    <span class="cart-item-unit-price">$120.000</span>
+                                </div>
+                                <div class="cart-item-quantity">
+                                    <button type="button" class="qty-btn" data-action="decrease" aria-label="Disminuir cantidad">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn" data-action="increase" aria-label="Aumentar cantidad">+</button>
+                                </div>
+                                <div class="cart-item-subtotal">
+                                    <span class="item-subtotal-price">$120.000</span>
+                                </div>
+                                <button type="button" class="remove-item-btn" data-action="remove" title="Eliminar producto">&times;</button>
+                            </article>
+
+                            <!-- Producto 2 de Ejemplo -->
+                            <article class="cart-item" data-id="prod-002" data-price="450000">
+                                <div class="cart-item-img">
+                                    <img src="/img/fp2.jpg" alt="Tarjeta Gráfica de Gama Alta">
+                                </div>
+                                <div class="cart-item-details">
+                                    <h3 class="cart-item-title">Tarjeta Gráfica de Gama Alta</h3>
+                                    <p class="cart-item-category">Componentes</p>
+                                    <span class="cart-item-unit-price">$450.000</span>
+                                </div>
+                                <div class="cart-item-quantity">
+                                    <button type="button" class="qty-btn" data-action="decrease" aria-label="Disminuir cantidad">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn" data-action="increase" aria-label="Aumentar cantidad">+</button>
+                                </div>
+                                <div class="cart-item-subtotal">
+                                    <span class="item-subtotal-price">$450.000</span>
+                                </div>
+                                <button type="button" class="remove-item-btn" data-action="remove" title="Eliminar producto">&times;</button>
+                            </article>
+
+                        </div>
+
+                        <!-- Acciones Generales del Carrito -->
+                        <div class="cart-actions">
+                            <a href="catalog.html" class="continue-shopping">&larr; Continuar Comprando</a>
+                            <button type="button" id="clear-cart-btn" class="clear-cart-btn">Vaciar Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Resumen de Pedido -->
+                    <aside class="cart-summary">
+                        <h2>Resumen del Pedido</h2>
+
+                        <!-- Cupón de Descuento -->
+                        <div class="coupon-box">
+                            <label for="coupon-code">Cupón de descuento</label>
+                            <div class="coupon-input-group">
+                                <input type="text" id="coupon-code" placeholder="Ingresa tu código">
+                                <button type="button" id="apply-coupon-btn">Aplicar</button>
+                            </div>
+                            <span id="coupon-message" class="coupon-message"></span>
+                        </div>
+
+                        <!-- Desglose de Totales -->
+                        <div class="summary-details">
+                            <div class="summary-line">
+                                <span>Subtotal</span>
+                                <span id="cart-subtotal">$570.000</span>
+                            </div>
+                            <div class="summary-line">
+                                <span>Envío estimado</span>
+                                <span id="cart-shipping">Gratis</span>
+                            </div>
+                            <div class="summary-line discount-line" id="discount-row" style="display: none;">
+                                <span>Descuento</span>
+                                <span id="cart-discount">-$0</span>
+                            </div>
+                            <hr class="summary-divider">
+                            <div class="summary-line summary-total">
+                                <span>Total</span>
+                                <span id="cart-total">$570.000</span>
+                            </div>
+                        </div>
+
+                        <button type="button" id="checkout-btn" class="checkout-btn">Proceder al Pago</button>
+                    </aside>
+                </div>
+            </div>
+        </section>
+</main>
+    <footer>
+        <div class="footer_section1">
+            <ul>
+                <li class="footer-links"><a href="index.html">Inicio</a></li>
+                <li class="footer-links"><a href="catalog.html">Catálogo</a></li>
+                <li class="footer-links"><a href="contact.html">Contacto</a></li>
+                <li class="footer-links"><a href="#">Términos y Condiciones</a></li>
+                <li class="footer-links"><a href="#">Políticas de Privacidad</a></li>
+            </ul>
+        </div>
+        <div class="footer_section2">
+            <ul>
+                <li class="footer-links"><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                <li class="footer-links"><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li class="footer-links"><a href="mailto:risewavetech@gmail.com">contacto@risewave.com</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer_section3">
+            <p>&copy; 2026 RiseWave Store. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
