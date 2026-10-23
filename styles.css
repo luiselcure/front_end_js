@@ -118,7 +118,7 @@ input:focus {
     transition: color 0.3s ease;
 }
 
-.Signin a:hover, .car a:hover {
+ .car a:hover {
     color: #c4b299; 
     transform: scale(1.05);
     transition: 0.25s;
@@ -149,6 +149,26 @@ input:focus {
 
 .nav-btn a {
     color: inherit;
+}
+
+/* Ocultar siempre el checkbox nativo */
+#menu-toggle {
+    display: none;
+}
+
+/* Ocultar el ícono de hamburguesa en pantallas de escritorio */
+.hamburger-icon {
+    display: none;
+    font-size: 2rem;
+    color: #f1f0e2;
+    cursor: pointer;
+    padding: 5px 12px;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.hamburger-icon:hover {
+    color: #d11a2a;
 }
 
 /* Estilos de sección Hero */
@@ -823,10 +843,23 @@ footer {
         width: 7rem;
     }
 
+    /* Mostrar el botón hamburguesa */
+    .hamburger-icon {
+        display: block;
+    }
+
+    /* Ocultar la barra de menú por defecto en móvil */
     #main-btns {
+        display: none;
         flex-direction: column;
         width: 100%;
-        padding: 10px;
+        padding: 10px 0;
+        background-color: #222323;
+    }
+
+    /* Selector CSS mágico: al marcar la casilla, se despliega el menú hermano (~ #main-btns) */
+    #menu-toggle:checked ~ #main-btns {
+        display: flex;
     }
 
     .nav-btn {
