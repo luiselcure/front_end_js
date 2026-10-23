@@ -1,147 +1,382 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
 
-/* Configuraciones generales */
-html{
-    font-family: "Roboto", sans-serif;  
+/* Reset y configuraciones generales */
+* {
+    box-sizing: border-box;
 }
-body{
-    background: #edebd2;
+
+html {
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #181919; 
+    color: #f1f0e2;
     padding: 0;
     margin: 0;
     min-height: 100vh; 
     display: flex;
-    flex-direction: column-reverse;
-  
+    flex-direction: column; 
 }
+
 main {
-  flex: 1; 
+    flex: 1; 
 }
-button{
+
+button {
     width: 40%;
-    border-radius: 5px;
-    border: hidden;
-    background-color: rgb(121, 146, 168);
+    border-radius: 6px;
+    border: none;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #c4b299; /* Marrón arena */
+    color: #181919;
+    transition: all 0.3s ease;
 }
-a{
+
+a {
     text-decoration: none;
-    color: white;
-}
-/* Opciones para la barra de navegación */
-nav {
-    position: sticky;
-    top: 0;
-    background-color: rgb(46, 60, 72);
     color: #f1f0e2;
-    height: 5vh;
-    width: 100vw;
-    
-}
-
-.container{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding: 20px;
-}
-
-.logo{
     display: flex;
     justify-content: center;
-    width: 33vw;
-    
-}
-.logoImg{
-    width: 10rem;
-    transition: width 0.5s ease;
-
-}
-.logoImg:hover{
-    width: 11rem;
-}
-input{
-    border-radius: 5px;
-    height: 60px;
+    align-items: center;
 }
 
-.nav-btn{
-    color: white;
-    margin-right: 0;
-    background-color: rgb(46, 60, 72);
-    padding: 1rem;
-    height: 5vh;
-    justify-content: baseline;
-    transition: background-color 0.5s ease;
+/* Opciones para la barra de navegación */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
 
+nav {
+    background-color: #2b2c2c; /* Gris arcilla oscuro */
+    color: #f1f0e2;
+    width: 100%;
 }
-.nav-btn:hover{
-    background-color: rgb(63, 80, 95);
+
+.container {
+    list-style-type: none;
+    margin: 0;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
+
+.nav-btn {
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoImg {
+    width: 9rem;
+    max-height: 45px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logoImg:hover {
+    transform: scale(1.05);
+}
+
+.search {
+    flex: 1;
+    max-width: 500px;
+}
+
+input {
+    width: 100%;
+    border-radius: 6px;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid #3d3e3e;
+    background-color: #181919;
+    color: #f1f0e2;
+    outline: none;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #d11a2a; 
+}
+
+.Signin a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.Signin a:hover, .car a:hover {
+    color: #c4b299; 
+    transform: scale(1.05);
+    transition: 0.25s;
+    box-shadow: 0 6px 20px rgba(22, 19, 20, 0.6);
+}
+
+#main-btns {
+    justify-content: center;
+    background-color: #222323; /* Gris más oscuro para barra secundaria */
+    border-top: 1px solid #383939;
+    padding: 6px 20px;
+    gap: 10px;
+}
+
+.nav-btn {
+    color: #f1f0e2;
+    background-color: transparent;
+    padding: 0.5rem 1.2rem;
+    height: auto;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #d11a2a; /* Rojo escarlata */
+    color: #ffffff;
+}
+
+.nav-btn a {
+    color: inherit;
+}
+
 /* Estilos de sección Hero */
-.hero{
+.hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 50vw;
-    background-image: url("/img/main-banner.jpg");
+    justify-content: center;
+    min-height: 55vh;
+    background: url("/img/main-banner.jpg") center/cover no-repeat;
+    text-align: center;
+    padding: 40px 20px;
 }
-h1{
-    font-size: 5rem;
+
+h1 {
+    font-size: 3.5rem;
     color: #f1f0e2;
+    margin: 0 0 25px 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.oferta {
+    width: auto;
+    padding: 14px 36px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: #d11a2a; /* Rojo escarlata */
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(209, 26, 42, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.oferta:hover {
+    background-color: #b51523;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(209, 26, 42, 0.6);
 }
 
 /* Estilos de sección categorías */
-.categories{
+.categories {
     display: flex;
     justify-content: center;
-    background-color: #420202;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #202121;
+    padding: 40px 20px;
 }
 
-.category-card{
-    background-color:rgb(46, 60, 72); 
-    padding: 2rem;
-    margin: 5%; 
-    min-height:30vh ;  
+.category-card {
+    background-color: #2b2c2c; /* Gris arcilla */
+    border: 1px solid #3d3e3e;
+    border-radius: 8px;
+    padding: 1.8rem 1.2rem;
+    margin: 0;
+    min-height: 110px;
+    flex: 1 1 200px;
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #c4b299; /* Marrón arena */
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
 }
+
+.category-card:hover {
+    background-color: #353636;
+    border-color: #c4b299;
+    color: #ffffff;
+    transform: translateY(-4px);
+}
+
 /* Estilos de sección de productos destacados */
-.featured-products{/* Para el section  */
+.featured-products {
     display: flex;
     justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 60px 20px;
+    background-color: #181919;
 }
-.fpr{ /* Para cada div individual */
-    background-color: rgb(46, 60, 72);
+
+.fpr {
+    background-color: #2b2c2c; /* Gris arcilla */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 2.5vw;
-    width: 20vw;
-    max-height: 20vw;
-    border: 2px solid;
-    border-radius: 15px 40px;
+    justify-content: space-between;
+    margin: 0;
+    width: 240px;
+    max-height: none;
+    padding: 20px;
+    border: 1px solid #3d3e3e;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
-.fpr_img{
-    height:50% ;
-    margin-bottom: 10%;
+
+.fpr:hover {
+    border-color: #d11a2a; /* Rojo escarlata */
+    transform: translateY(-5px);
 }
-.addCart-btn{
-    width: 40%;
-    height: 2rem;
-    border-radius: 5px;
-    background-color: rgb(121, 146, 168);
+
+.fpr_img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.addCart-btn {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 6px;
+    background-color: #c4b299; /* Marrón arena */
+    color: #181919;
+    font-weight: 700;
+    font-size: 0.9rem;
     transform: scale(1);
-    transition: transform 0.5s ease;
-    
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
-.addCart-btn:hover{
-    transform: scale(1.2);
-    
+
+.addCart-btn:hover {
+    background-color: #d11a2a; /* Rojo escarlata al hover */
+    color: #ffffff;
+    transform: scale(1.02);
 }
-/* footer */
-footer{
-    width: 100vw;
-    background-color: rgb(46, 60, 72);
-    position: absolute;
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #2b2c2c; /* Gris arcilla */
+    border-top: 2px solid #3d3e3e;
+    position: relative;
+    padding: 30px 20px;
+    margin-top: auto;
+}
+
+.footer_section1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    color: #c4b299; /* Marrón arena */
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-links:hover {
+    color: #d11a2a; /* Rojo escarlata */
+}
+
+/* Adaptabilidad Responsiva */
+
+/* Tablets y pantallas medianas (<= 992px) */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .container {
+        justify-content: center;
+    }
+
+    .search {
+        order: 3;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .category-card {
+        max-width: 45%;
+        flex: 1 1 45%;
+    }
+
+    .fpr {
+        width: calc(45% - 20px);
+    }
+}
+
+/* Smartphons y pantallas pequeñas (<= 600px) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .logoImg {
+        width: 7rem;
+    }
+
+    #main-btns {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .category-card {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .fpr {
+        width: 100%;
+    }
+
+    .addCart-btn {
+        height: 2.8rem;
+    }
 }

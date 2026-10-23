@@ -10,21 +10,23 @@
 
 <body>
     <main>
+       <header>
         <nav class="container">
             
             <ul class="container">
                 <li class="logo"><img class="logoImg" src="/img/logotype_riseWave.png" alt="logo"></li>
                 <li class="search"><input type="text" id="navSearch" name="navSearchBar" placeholder="¿Qué estás buscando hoy?" size="50"></li>
-                <li class="Signin"> <a href="#">Sign in</a> </li>
-                <li class="car"> <a href="#">Ícono de carrito</a></li>
+                <li class="Signin"> <a href="#"> Sing in </a> </li>
+                <li class="car"> <a href="#"><img src="/img/buy_cart.png" alt="cart"></a></li>
             </ul>
             
-            <ul class="container">
+            <ul class="container"  id="main-btns">
                 <li class="nav-btn"><a href="index.html">Inicio</a></li>
                 <li class="nav-btn"><a href="catalog.html">Catálogo</a></li>
-                <li class="nav-btn"><a href="#">Contácto</a></li>
+                <li class="nav-btn"><a href="contact.html">Contácto</a></li>
             </ul>
-        </nav>
+        </nav>    
+        </header>
         <div class="container">
         <!-- Productos  -->
         <section class="featured-products">
@@ -44,8 +46,23 @@
                 <img class="fpr_img" src="/img/fp4.jpg" alt="fpr_preview">
                 <button class="addCart-btn">Agregar al carrito</button>
             </div>
+
+            <div id="prod-container"></div>
+
+    <!-- 2. El molde invisible. El navegador lee esto pero NO lo dibuja en pantalla -->
+    <template id="molde-producto">
+        <div class="tarjeta-producto">
+            <img class="prod-img" src="" alt="Imagen de referencia">
+            <h3 class="prod-titulo"></h3>
+            <p class="prod-descripcion"></p>
+            <div class="prod-precio"></div>
+            <button class="btn-comprar">Sumar al proyecto</button>
+        </div>
+    </template>
+
         </section>
-        <!-- Filtrs -->
+
+        <!-- Filtros -->
         <span class="container">
             <ul>
                 <h3>Filtros</h3>
