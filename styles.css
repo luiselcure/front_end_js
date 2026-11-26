@@ -251,7 +251,7 @@ h1 {
 }
 
 /* Estilos de sección de productos destacados */
-.featured-products {
+.featured-products, #prod-container{
     display: flex;
     justify-content: center;
     align-items: stretch;
