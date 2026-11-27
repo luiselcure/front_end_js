@@ -1,20 +1,4 @@
-//Hacer funcionar el buscador en la barra de navegación
+//Constantes de la página
+const API_URL= 'https://6b0997156a4ecd58b0079e1a.mockapi.io/wave-api/v1/:endpoint'
 
- const searchBar = document.getElementById("navSearch")
 
- function dibujar (list){
-     container.innerHTML="";
-     list.forEach(producto => {
-       container.appendChild(createCard(producto))
-     });
- }
- searchBar.addEventListener("input", () => {
-   const text = searchBar.value.toLowerCase()
-
-   const filterData= catalogo.filter(producto=>{
-     return producto.titulo.toLowerCase().includes(text)
-   })
-   dibujar(filterData)
- })
-
- dibujar(catalogo)
